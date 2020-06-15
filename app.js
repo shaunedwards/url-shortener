@@ -39,7 +39,7 @@ app.post('/', apiLimiter, async (req, res, next) => {
   slug = slug.trim().toLowerCase();
 
   // if no slug provided, generate one
-  if (!slug) slug = nanoid(8);
+  if (!slug) slug = nanoid(8).toLowerCase();
 
   try {
     await schema.validate({ url, slug });
