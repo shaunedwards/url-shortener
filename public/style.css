@@ -1,0 +1,31 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background: #000;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+a {
+  color: #fc0;
+}
+
+input {
+  display: block;
+  margin: 0.25rem auto;
+  font-size: 1em;
+}
+
+#message {
+  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+}
+
+.error {
+  background: #A63446;
+}
+
+.success {
+  background: #1DB954;
+}

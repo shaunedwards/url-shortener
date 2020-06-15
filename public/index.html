@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>URL Shortener - sme.dev</h1>
+  </header>
+  <main>
+    <form onsubmit="event.preventDefault()">
+      <input type="text" name="url" id="url" placeholder="enter a url" autofocus required>
+      <input type="text" name="slug" id="slug" placeholder="enter a slug">
+      <input type="submit" value="create">
+    </form>
+    <div id="message"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
