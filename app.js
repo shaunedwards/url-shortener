@@ -36,7 +36,7 @@ const apiLimiter = rateLimit({
 
 app.post('/', apiLimiter, async (req, res, next) => {
   let { url, slug } = req.body;
-  slug = slug.trim();
+  slug = slug.trim().toLowerCase();
 
   // if no slug provided, generate one
   if (!slug) slug = nanoid(8);
