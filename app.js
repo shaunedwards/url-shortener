@@ -22,7 +22,7 @@ urls.createIndex({ slug: 1 }, { unique: true });
 
 const schema = yup.object().shape({
   url: yup.string().trim().url().required(),
-  slug: yup.string().trim().matches(/^[\w\-]+$/i)
+  slug: yup.string().trim().max(10).matches(/^[\w\-]+$/i)
 });
 
 const apiLimiter = rateLimit({
