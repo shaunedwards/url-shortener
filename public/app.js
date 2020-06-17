@@ -4,7 +4,7 @@ form.addEventListener('submit', async () => {
   message.className = '';
   const urlVal = document.querySelector('#url').value;
   const slugVal = document.querySelector('#slug').value;
-  const response = await fetch('http://localhost:5555', {
+  const response = await fetch('https://go.sme.dev', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -17,7 +17,7 @@ form.addEventListener('submit', async () => {
   const { slug, error } = await response.json();
   if (response.ok) {
     message.classList.add('success');
-    message.innerText = `http://localhost:5555/${slug}`;
+    message.innerText = `https://go.sme.dev/${slug}`;
   } else {
     message.classList.add('error');
     message.innerText = error;
