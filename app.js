@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const yup = require('yup');
-const cors = require('cors');
 const monk = require('monk');
 const path = require('path');
 const helmet = require('helmet');
@@ -10,7 +9,6 @@ const rateLimit = require('express-rate-limit');
 
 const app = express();
 
-app.use(cors());
 app.use(helmet());
 app.use(express.json());
 app.use(express.static('public'));
@@ -32,6 +30,7 @@ const apiLimiter = rateLimit({
   message: {
     error: 'too many requests - try again in 15 mins'
   },
+  keyGenerator: (req, res) => req.headers['x-real-ip']
 });
 
 app.post('/', apiLimiter, async (req, res, next) => {
