@@ -4,10 +4,11 @@ const yup = require('yup');
 const monk = require('monk');
 const path = require('path');
 const helmet = require('helmet');
-const { nanoid } = require('nanoid');
+const { customAlphabet } = require('nanoid');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
+const nanoid = customAlphabet('0123456789abcdefghijklmnopqrstuvwxyz', 8);
 
 app.use(helmet());
 app.use(express.json());
@@ -38,7 +39,7 @@ app.post('/', apiLimiter, async (req, res, next) => {
   slug = slug.trim().toLowerCase();
 
   // if no slug provided, generate one
-  if (!slug) slug = nanoid(8).toLowerCase();
+  if (!slug) slug = nanoid();
 
   try {
     await schema.validate({ url, slug });
