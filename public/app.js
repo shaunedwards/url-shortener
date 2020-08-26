@@ -22,6 +22,7 @@ form.addEventListener('submit', async () => {
     message.classList.add('error');
     message.innerText = error;
   }
+  message.style.display = 'block';
   form.reset();
   document.querySelector('#url').focus();
 });
