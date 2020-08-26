@@ -4,7 +4,7 @@ form.addEventListener('submit', async () => {
   message.className = '';
   const urlVal = document.querySelector('#url').value;
   const slugVal = document.querySelector('#slug').value;
-  const response = await fetch('https://go.sme.dev', {
+  const response = await fetch('/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
