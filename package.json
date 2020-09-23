@@ -7,15 +7,15 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "author": "Shaun (shaun@sme.dev)",
+  "author": "Shaun Edwards (shaun@sme.dev)",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-rate-limit": "^5.1.3",
     "helmet": "^3.23.0",
-    "monk": "^7.3.0",
+    "mongoose": "^5.10.6",
     "nanoid": "^3.1.10",
-    "yup": "^0.29.1"
+    "validator": "^13.1.17"
   }
 }
