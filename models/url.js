@@ -34,8 +34,8 @@ const urlSchema = new Schema({
 });
 
 urlSchema.pre('save', function(next) {
-  if (!this.url.startsWith('http') || !this.url.startsWith('https')) {
-    const url = `https://${this.url}`;
+  if (!this.url.startsWith('http') && !this.url.startsWith('https')) {
+    const url = `http://${this.url}`;
     this.url = url;
   }
   next();
