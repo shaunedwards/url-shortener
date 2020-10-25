@@ -1,7 +1,7 @@
 const form = document.querySelector('form');
-const message = document.querySelector('#message');
 form.addEventListener('submit', async () => {
-  message.className = '';
+  result.className = '';
+  copy.style.display = 'none';
   const urlVal = document.querySelector('#url').value;
   const slugVal = document.querySelector('#slug').value;
   const response = await fetch('/', {
@@ -16,18 +16,19 @@ form.addEventListener('submit', async () => {
   });
   const { slug, error } = await response.json();
   if (response.ok) {
-    message.classList.add('success');
-    message.innerText = `https://go.sme.dev/${slug}`;
+    result.classList.add('success');
+    message.innerText = `${window.location.href}${slug}`;
+    copy.style.display = 'block';
   } else {
-    message.classList.add('error');
+    result.classList.add('error');
     message.innerText = error;
   }
-  message.style.display = 'block';
+  result.style.display = 'block';
   form.reset();
   document.querySelector('#url').focus();
 });
 
-message.addEventListener('click', () => {
+copy.addEventListener('click', () => {
   copyToClipboard(message.innerText);
 });
 

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>URL Shortener</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <link rel="stylesheet" type="text/css" href="blocks.min.css" />
+  <link rel="stylesheet" type="text/css" href="blocks.css" />
 </head>
+
 <body>
   <main class="card fixed block">
     <h1 class="block fixed">Shorten URL</h1>
@@ -15,8 +17,14 @@
       <input class="block fixed" type="text" name="slug" id="slug" placeholder="enter a slug (optional)" maxlength="15">
       <input class="block accent" type="submit" value="create">
     </form>
-    <div id="message"></div>
+    <div id="result">
+      <span id="message"></span>
+      <button id="copy" title="Copy to clipboard">
+        <img src="copy.svg" alt="Copy to clipboard" class="icon" />
+      </button>
+    </div>
   </main>
   <script src="app.js"></script>
 </body>
+
 </html>

@@ -1,7 +1,7 @@
-html, body {
+html,
+body {
   margin: 0 auto;
   padding: 0;
-  color: #fff;
   background: #abcdef;
   text-align: center;
   font-family: sans-serif;
@@ -12,23 +12,53 @@ html, body {
 }
 
 input {
-  margin: 0.25rem auto;
-  font-size: 1em;
+  font-size: 1rem;
   width: 98.5%;
 }
 
-#message {
+input + input {
+  margin-top: -1px !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+#result {
   padding: 0.5rem 1rem;
   color: #fff;
   display: none;
+  position: relative;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+#copy {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.container {
+  margin: 1rem;
+}
+
+.icon {
+  vertical-align: middle;
 }
 
 .error {
-  background: #A63446;
+  background: #a63446;
 }
 
 .success {
-  background: #1DB954;
+  background: #1db954;
 }
 
 @media (max-width: 640px) {
